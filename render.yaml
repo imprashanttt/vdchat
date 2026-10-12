@@ -1,0 +1,18 @@
+services:
+  - type: web
+    name: meetup-chat
+    runtime: node
+    plan: free
+    buildCommand: npm install
+    startCommand: npm start
+    healthCheckPath: /health
+    envVars:
+      - key: NODE_VERSION
+        value: 20
+      # Optional: add a TURN server so calls work on strict networks
+      # - key: TURN_URL
+      #   value: turn:your-turn-server:3478
+      # - key: TURN_USER
+      #   value: your-user
+      # - key: TURN_PASS
+      #   value: your-password
